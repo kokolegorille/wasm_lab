@@ -1,0 +1,2 @@
+<canvas id="game-of-life-canvas"></canvas>
+<button id="play-pause"></button>
