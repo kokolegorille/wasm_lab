@@ -19,6 +19,8 @@ defmodule WasmLabWeb.Router do
     get "/", PageController, :index
 
     get "/game-of-life", PageController, :game_of_life
+    get "/rustycheckers", PageController, :rustycheckers
+    get "/rogue", PageController, :rogue
   end
 
   # Other scopes may use custom stacks.

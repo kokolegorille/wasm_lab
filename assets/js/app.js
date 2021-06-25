@@ -33,10 +33,24 @@ import "./load_game_of_life";
 
 // console.log(add(8, 8))
 
-import { GameEngine } from "rustycheckers";
+import React from "react"
+import { render } from "react-dom"
 
-let engine = GameEngine.new();
+// import { GameEngine } from "rustycheckers";
 
-console.log(engine);
+// let engine = GameEngine.new();
+
+// console.log(engine);
 
 // console.log(GameEngine);
+
+import RustyCheckers from "./components/RustyCheckers";
+
+const rustycheckers = document.getElementById("rustycheckers");
+
+if (rustycheckers) {
+  render(
+    <RustyCheckers />, 
+    rustycheckers
+  )
+}

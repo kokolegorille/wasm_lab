@@ -8,4 +8,12 @@ defmodule WasmLabWeb.PageController do
   def game_of_life(conn, _params) do
     render(conn, "game_of_life.html")
   end
+
+  def rustycheckers(conn, _params) do
+    render(conn, "rustycheckers.html")
+  end
+
+  def rogue(conn, _params) do
+    render(conn, "rogue.html")
+  end
 end

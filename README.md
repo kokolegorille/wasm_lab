@@ -105,3 +105,29 @@ wasm-pack build
 Don't forget to run after adding new crate
 
 npm i --prefx assets
+
+## Configure reload
+
+wasm-pack has no watch option, use cargo-watch
+
+$ cargo install cargo-watch
+
+Then, update config/dev.exs, and configure watchers...
+
+```
+    # "wasm-pack": [
+    #   "build",
+    #   cd: Path.expand("../assets/wasm/rustycheckers", __DIR__)
+    # ]
+
+    cargo: [
+      "watch",
+      "-i",
+      ".gitignore",
+      "-i",
+      "pkg/*",
+      "-s",
+      "wasm-pack build",
+      cd: Path.expand("../assets/wasm/rustycheckers", __DIR__)
+    ]
+```

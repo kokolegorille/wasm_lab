@@ -1,0 +1,10 @@
+.row { display: flex; }
+.row_cell { flex: 1; }
+nav ul {
+    list-style-type: none; 
+    display: flex; 
+    li {
+        flex: 1 1 auto;
+        text-align: center;
+    }
+}

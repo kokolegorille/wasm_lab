@@ -1,7 +1,18 @@
+use std::fmt;
+
 #[derive(Debug, Copy, Clone, PartialEq)]
 pub enum PieceColor {
     White,
     Black,
+}
+
+impl fmt::Display for PieceColor {
+    fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
+        match *self {
+            PieceColor::White => write!(f, "White is white?!"),
+            PieceColor::Black => write!(f, "Ah que coucou CR7 Meli7 black c'est Noir!"),
+        }
+     }
 }
 
 #[derive(Debug, Copy, Clone, PartialEq)]

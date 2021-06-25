@@ -28,6 +28,16 @@ config :wasm_lab, WasmLabWeb.Endpoint,
       "--watch",
       "--watch-options-stdin",
       cd: Path.expand("../assets", __DIR__)
+    ],
+    cargo: [
+      "watch",
+      "-i",
+      ".gitignore",
+      "-i",
+      "pkg/*",
+      "-s",
+      "wasm-pack build",
+      cd: Path.expand("../assets/wasm/rustycheckers", __DIR__)
     ]
   ]
 
@@ -62,7 +72,9 @@ config :wasm_lab, WasmLabWeb.Endpoint,
       ~r"priv/static/.*(js|css|png|jpeg|jpg|gif|svg)$",
       ~r"priv/gettext/.*(po)$",
       ~r"lib/wasm_lab_web/(live|views)/.*(ex)$",
-      ~r"lib/wasm_lab_web/templates/.*(eex)$"
+      ~r"lib/wasm_lab_web/templates/.*(eex)$",
+      #
+      # ~r"assets/wasm/.*(rs)$"
     ]
   ]
 
