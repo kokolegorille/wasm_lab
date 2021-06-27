@@ -37,7 +37,7 @@ $ npm i @wasm-tool/wasm-pack-plugin --prefix assets
 ```
 $ mkdir assets/wasm
 $ cd assets/wasm
-$ cargo new hello-wasm
+$ cargo new hello-wasm --lib
 ```
 
 Update Cargo.toml and Add wasm-bindgen
@@ -60,10 +60,12 @@ wasm-bindgen = "0.2"
 
 Add lib.js
 ```
-import("./pkg/").then(lib => {
-    console.log(`2 + 2 = ${lib.add(2, 2)}`);
-    return lib;
-});
+// import("./pkg/").then(lib => {
+//     console.log(`2 + 2 = ${lib.add(2, 2)}`);
+//     return lib;
+// });
+
+import("./pkg/").then(lib => lib);
 ```
 
 Update src/lib.rs
@@ -104,7 +106,7 @@ wasm-pack build
 
 Don't forget to run after adding new crate
 
-npm i --prefx assets
+npm i --prefix assets
 
 ## Configure reload
 
@@ -133,3 +135,70 @@ Then, update config/dev.exs, and configure watchers...
 ```
 
 It's possible to watch multiple crates.
+
+## Rustler
+
+This is the server side of Rust with Elixir.
+
+Add rustler to mix 
+Use version 0.22 with Elixir 1.12 and OTP24
+
+```
+      {:rustler, "~> 0.22.0"},
+```
+
+Create a new rustler crate
+
+```
+$ mix rustler.new
+==> toml
+Compiling 10 files (.ex)
+Generated toml app
+==> rustler
+Compiling 7 files (.ex)
+Generated rustler app
+==> wasm_lab
+This is the name of the Elixir module the NIF module will be registered to.
+Module name > Math
+This is the name used for the generated Rust crate. The default is most likely fine.
+Library name (math) > 
+* creating native/math/.cargo/config
+* creating native/math/README.md
+* creating native/math/Cargo.toml
+* creating native/math/src/lib.rs
+* creating native/math/.gitignore
+Ready to go! See /home/sqrt/DATA_2021/code/_ELIXIR/_LAB/wasm_lab/native/math/README.md for further instructions.
+```
+
+Update config/dev.exs
+
+```
+config :wasm_lab, WasmLab.Native.Math,
+  crate: :math,
+  mode: :debug
+```
+
+You have a native folder at the root of the project.
+
+
+```
+#[rustler::nif]
+fn add(a: i64, b: i64) -> i64 {
+    a + b
+}
+
+rustler::init!("Elixir.WasmLab.Native.Math", [add]);
+```
+
+Add wasm_lab/native/math.ex
+
+```
+defmodule WasmLab.Native.Math do
+  use Rustler, otp_app: :wasm_lab, crate: :math
+
+  def add(_a, _b) do
+    :erlang.nif_error(:nif_not_loaded)
+  end
+end
+```
+
