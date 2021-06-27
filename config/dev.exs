@@ -38,6 +38,26 @@ config :wasm_lab, WasmLabWeb.Endpoint,
       "-s",
       "wasm-pack build",
       cd: Path.expand("../assets/wasm/rustycheckers", __DIR__)
+    ],
+    cargo: [
+      "watch",
+      "-i",
+      ".gitignore",
+      "-i",
+      "pkg/*",
+      "-s",
+      "wasm-pack build",
+      cd: Path.expand("../assets/wasm/hello-wasm", __DIR__)
+    ],
+    cargo: [
+      "watch",
+      "-i",
+      ".gitignore",
+      "-i",
+      "pkg/*",
+      "-s",
+      "wasm-pack build",
+      cd: Path.expand("../assets/wasm/rogue", __DIR__)
     ]
   ]
 

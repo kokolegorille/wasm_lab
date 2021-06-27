@@ -131,3 +131,5 @@ Then, update config/dev.exs, and configure watchers...
       cd: Path.expand("../assets/wasm/rustycheckers", __DIR__)
     ]
 ```
+
+It's possible to watch multiple crates.
