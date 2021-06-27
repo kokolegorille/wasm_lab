@@ -1,5 +1,5 @@
 const path = require("path");
-const glob = require("glob");
+// const glob = require("glob");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
 const TerserPlugin = require("terser-webpack-plugin");
@@ -17,9 +17,8 @@ module.exports = (_env, options) => {
       ]
     },
     entry: {
-      "app": glob.sync("./vendor/**/*.js").concat(["./js/app.js"]),
-      // "lib": "./wasm/hello-wasm/lib.js",
-      // "game-of-life": "./wasm/game-of-life/lib.js",
+      // "app": glob.sync("./vendor/**/*.js").concat(["./js/app.js"]),
+      "app": "./js/app.js",
     },
     output: {
       filename: "[name].js",
@@ -49,7 +48,7 @@ module.exports = (_env, options) => {
     plugins: [
       new MiniCssExtractPlugin({ filename: "../css/app.css" }),
       new CopyWebpackPlugin({
-        patterns: [{ from: "static/", to: "./" }]
+        patterns: [{ from: "static/", to: "../" }]
       }),
       new WasmPackPlugin({
         crateDirectory: path.resolve(__dirname, "./wasm/hello-wasm/"), // Define where the root of the rust code is located (where the cargo.toml file is located)

@@ -4,7 +4,8 @@ import { Universe } from "game-of-life";
 //
 // export const memory = wasm.memory;
 
-import { memory } from "game-of-life/index_bg";
+// import { memory } from "game-of-life/index_bg";
+import { memory } from "game-of-life/game_of_life_bg";
 
 const canvas = document.getElementById("game-of-life-canvas");
 
