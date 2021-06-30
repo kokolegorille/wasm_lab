@@ -25,6 +25,10 @@ extern "C" {
     fn log_many(a: &str, b: &str);
 }
 
+macro_rules! console_log {
+    ($($t:tt)*) => (log(&format_args!($($t)*).to_string()))
+}
+
 #[wasm_bindgen]
 pub fn hello(name: &str) {
     alert(&format!("Hello, {}!", name));
@@ -32,10 +36,20 @@ pub fn hello(name: &str) {
 
 #[wasm_bindgen]
 pub fn hello_console(name: &str) {
-    log(&format!("Hello, {}!", name));
+    // log(&format!("Hello, {}!", name));
+    console_log!("Hello Yo, {}!", name);
 }
 
 #[wasm_bindgen]
 pub fn add(a: i32, b: i32) -> i32 {
     a + b
+}
+
+#[wasm_bindgen]
+pub fn factorial(num: usize) -> usize {
+    match num {
+        0 => 1,
+        1 => 1,
+        _ => factorial(num - 1) * num,
+    }
 }

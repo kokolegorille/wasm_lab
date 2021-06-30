@@ -52,6 +52,7 @@ module.exports = (_env, options) => {
       }),
       new WasmPackPlugin({
         crateDirectory: path.resolve(__dirname, "./wasm/hello-wasm/"), // Define where the root of the rust code is located (where the cargo.toml file is located)
+        crateDirectory: path.resolve(__dirname, "./wasm/hello-bindgen/"),
         crateDirectory: path.resolve(__dirname, "./wasm/game-of-life/"),
         crateDirectory: path.resolve(__dirname, "./wasm/rustycheckers/"),
         crateDirectory: path.resolve(__dirname, "./wasm/rogue/"),

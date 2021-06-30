@@ -1,1 +1,0 @@
-import("./pkg/").then(lib => lib);

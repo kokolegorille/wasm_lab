@@ -21,10 +21,19 @@ import "phoenix_html";
 // console.log(`3 + 2 = ${add(3, 2)}`);
 // hello('Meli7');
 
-import { add, hello_console } from "hello-wasm";
+import { add, hello_console, factorial } from "hello-wasm";
 console.log(`4 + 2 = ${add(4, 2)}`);
 
+const fact = 20;
+console.log(`${fact}! = ${factorial(fact)}`);
+
 hello_console('Meli7');
+
+// HELLO BINDGEN
+// ----------------------
+
+// import run from "./load_hello_bindgen";
+// run();
 
 // GAME OF LIFE
 // ----------------------
@@ -242,8 +251,8 @@ if (rogueCanvas) {
   Game.init();
 }
 
-export function stats_updated(stats) {
-  document.getElementById("hitpoints").textContent = stats.hitpoints;
-  document.getElementById("max_hitpoints").textContent = stats.max_hitpoints;
-  document.getElementById("moves").textContent = stats.moves;
-}
+// export function stats_updated(stats) {
+//   document.getElementById("hitpoints").textContent = stats.hitpoints;
+//   document.getElementById("max_hitpoints").textContent = stats.max_hitpoints;
+//   document.getElementById("moves").textContent = stats.moves;
+// }
