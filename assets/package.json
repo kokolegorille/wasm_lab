@@ -18,7 +18,8 @@
     "react-dom": "^17.0.2",
     "rogue": "file:./wasm/rogue/pkg",
     "rot-js": "^2.1.5",
-    "rustycheckers": "file:./wasm/rustycheckers/pkg"
+    "rustycheckers": "file:./wasm/rustycheckers/pkg",
+    "rustygo": "file:./wasm/rustygo/pkg"
   },
   "devDependencies": {
     "@babel/core": "^7.14.6",

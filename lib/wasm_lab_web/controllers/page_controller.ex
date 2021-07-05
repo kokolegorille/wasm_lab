@@ -13,6 +13,10 @@ defmodule WasmLabWeb.PageController do
     render(conn, "rustycheckers.html")
   end
 
+  def rustygo(conn, _params) do
+    render(conn, "rustygo.html")
+  end
+
   def rogue(conn, _params) do
     render(conn, "rogue.html")
   end

@@ -57,6 +57,20 @@ if (rustycheckers) {
   )
 }
 
+// RUSTY GO
+// ----------------------
+
+import RustyGo from "./components/RustyGo";
+
+const rustygo = document.getElementById("rustygo");
+
+if (rustygo) {
+  render(
+    <RustyGo />,
+    rustygo
+  )
+}
+
 // ROGUE
 // ----------------------
 

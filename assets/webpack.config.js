@@ -55,6 +55,7 @@ module.exports = (_env, options) => {
         crateDirectory: path.resolve(__dirname, "./wasm/hello-bindgen/"),
         crateDirectory: path.resolve(__dirname, "./wasm/game-of-life/"),
         crateDirectory: path.resolve(__dirname, "./wasm/rustycheckers/"),
+        crateDirectory: path.resolve(__dirname, "./wasm/rustygo/"),
         crateDirectory: path.resolve(__dirname, "./wasm/rogue/"),
 
         // Check https://rustwasm.github.io/wasm-pack/book/commands/build.html for

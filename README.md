@@ -202,3 +202,107 @@ defmodule WasmLab.Native.Math do
 end
 ```
 
+## Game of life
+
+export const memory = wasm.memory;
+
+## Rustygo
+
+```
+cd assets/wasm
+cargo new rustygo --lib
+```
+
+* Update Cago.toml
+
+```
+crate-type = ["cdylib"]
+
+[dependencies]
+wasm-bindgen = "0.2"
+```
+
+* Update assets/webpack.config.js
+
+```
+        crateDirectory: path.resolve(__dirname, "./wasm/rustygo/"),
+```
+
+Update assets/package.json
+
+```
+"rustygo": "file:./wasm/rustygo/pkg"
+```
+
+```
+npm i --prefix assets
+```
+
+* Add new route
+
+```
+    get "/rustygo", PageController, :rustygo
+```
+
+* Add new template
+
+Wrapper for react component... in ... templates/page/rustygo.html.eex
+
+```
+<div id="rustygo"></div>
+```
+
+* Update ... controllers/page_controller.ex
+```
+  def rustygo(conn, _params) do
+    render(conn, "rustygo.html")
+  end
+```
+
+
+* Update navbar ... in templates/layout/app.html.eex
+
+```
+            <li><%= link "Rusty Go", to: Routes.page_path(@conn, :rustygo) %></li>
+```
+
+* Create react component
+
+```
+import React from "react";
+
+const RustyGo = () => {
+    return (
+        <div>
+            <h1>Rusty Go</h1>
+        </div>
+    )
+}
+
+export default RustyGo;
+```
+
+* Update assets/app.js
+
+```
+// RUSTY GO
+// ----------------------
+
+import RustyGo from "./components/RustyGo";
+
+const rustygo = document.getElementById("rustygo");
+
+if (rustygo) {
+  render(
+    <RustyGo />,
+    rustygo
+  )
+}
+```
+
+* Build with wasm-pack once...
+
+cd assets/wasm/rustygo
+wasm-pack build
+
+* Add wasm-bindgen to the crate
