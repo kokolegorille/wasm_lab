@@ -32,8 +32,8 @@ hello_console('Meli7');
 // HELLO BINDGEN
 // ----------------------
 
-// import run from "./load_hello_bindgen";
-// run();
+import run from "./load_hello_bindgen";
+run();
 
 // GAME OF LIFE
 // ----------------------

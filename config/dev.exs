@@ -33,36 +33,36 @@ config :wasm_lab, WasmLabWeb.Endpoint,
       "--watch-options-stdin",
       cd: Path.expand("../assets", __DIR__)
     ],
-    cargo: [
-      "watch",
-      "-i",
-      ".gitignore",
-      "-i",
-      "pkg/*",
-      "-s",
-      "wasm-pack build",
-      cd: Path.expand("../assets/wasm/rustycheckers", __DIR__)
-    ],
-    cargo: [
-      "watch",
-      "-i",
-      ".gitignore",
-      "-i",
-      "pkg/*",
-      "-s",
-      "wasm-pack build",
-      cd: Path.expand("../assets/wasm/hello-wasm", __DIR__)
-    ],
-    cargo: [
-      "watch",
-      "-i",
-      ".gitignore",
-      "-i",
-      "pkg/*",
-      "-s",
-      "wasm-pack build",
-      cd: Path.expand("../assets/wasm/rogue", __DIR__)
-    ]
+    # cargo: [
+    #   "watch",
+    #   "-i",
+    #   ".gitignore",
+    #   "-i",
+    #   "pkg/*",
+    #   "-s",
+    #   "wasm-pack build",
+    #   cd: Path.expand("../assets/wasm/rustycheckers", __DIR__)
+    # ],
+    # cargo: [
+    #   "watch",
+    #   "-i",
+    #   ".gitignore",
+    #   "-i",
+    #   "pkg/*",
+    #   "-s",
+    #   "wasm-pack build",
+    #   cd: Path.expand("../assets/wasm/hello-wasm", __DIR__)
+    # ],
+    # cargo: [
+    #   "watch",
+    #   "-i",
+    #   ".gitignore",
+    #   "-i",
+    #   "pkg/*",
+    #   "-s",
+    #   "wasm-pack build",
+    #   cd: Path.expand("../assets/wasm/rogue", __DIR__)
+    # ]
   ]
 
 # ## SSL Support

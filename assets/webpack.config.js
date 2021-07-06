@@ -1,4 +1,5 @@
 const path = require("path");
+const webpack = require("webpack");
 // const glob = require("glob");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
@@ -100,6 +101,10 @@ module.exports = (_env, options) => {
         // Controls plugin output verbosity, either 'info' or 'error'.
         // Defaults to 'info'.
         // pluginLogLevel: 'info'
+      }),
+      new webpack.ProvidePlugin({
+        TextDecoder: ["text-encoding", "TextDecoder"],
+        TextEncoder: ["text-encoding", "TextEncoder"]
       }),
     ],
     experiments: {
