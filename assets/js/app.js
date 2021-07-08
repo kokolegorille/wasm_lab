@@ -29,11 +29,30 @@ console.log(`${fact}! = ${factorial(fact)}`);
 
 hello_console('Meli7');
 
+// FFMPEG
+// ----------------------
+
+import Ffmpeg from "./components/Ffmpeg";
+
+const ffmpeg = document.getElementById("ffmpeg");
+
+if (ffmpeg) {
+  render(
+    <Ffmpeg />,
+    ffmpeg
+  )
+}
+
 // HELLO BINDGEN
 // ----------------------
 
 import run from "./load_hello_bindgen";
-run();
+
+const hello_bindgen = document.getElementById("hello_bindgen");
+
+if (hello_bindgen) {
+  run();
+}
 
 // GAME OF LIFE
 // ----------------------

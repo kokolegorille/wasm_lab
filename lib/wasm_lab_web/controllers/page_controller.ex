@@ -5,8 +5,16 @@ defmodule WasmLabWeb.PageController do
     render(conn, "index.html")
   end
 
+  def ffmpeg(conn, _params) do
+    render(conn, "ffmpeg.html")
+  end
+
   def game_of_life(conn, _params) do
     render(conn, "game_of_life.html")
+  end
+
+  def hello_bindgen(conn, _params) do
+    render(conn, "hello_bindgen.html")
   end
 
   def rustycheckers(conn, _params) do

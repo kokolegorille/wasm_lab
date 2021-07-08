@@ -1,0 +1,7 @@
+<h1>Hello Bindgen</h1>
+<div id="hello_bindgen"></div>
+
+<div id="container">
+    <div id="add-counter">
+    </div>
+</div>

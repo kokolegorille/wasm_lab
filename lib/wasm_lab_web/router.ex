@@ -18,7 +18,9 @@ defmodule WasmLabWeb.Router do
 
     get "/", PageController, :index
 
+    get "/ffmpeg", PageController, :ffmpeg
     get "/game-of-life", PageController, :game_of_life
+    get "/hello-bindgen", PageController, :hello_bindgen
     get "/rustycheckers", PageController, :rustycheckers
     get "/rustygo", PageController, :rustygo
     get "/rogue", PageController, :rogue
