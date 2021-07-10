@@ -24,7 +24,7 @@ defmodule WasmLabWeb.Endpoint do
     at: "/",
     from: :wasm_lab,
     gzip: true,
-    only: ~w(css fonts images js favicon.ico robots.txt),
+    only: ~w(css fonts images js favicon.ico robots.txt wasm),
     content_types: %{
       "index" => "application/wasm"
     }

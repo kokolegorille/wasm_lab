@@ -5,6 +5,10 @@ defmodule WasmLabWeb.PageController do
     render(conn, "index.html")
   end
 
+  def asteroids(conn, _params) do
+    render(conn, "asteroids.html")
+  end
+
   def ffmpeg(conn, _params) do
     render(conn, "ffmpeg.html")
   end
@@ -27,5 +31,9 @@ defmodule WasmLabWeb.PageController do
 
   def rogue(conn, _params) do
     render(conn, "rogue.html")
+  end
+
+  def stockfish(conn, _params) do
+    render(conn, "stockfish.html")
   end
 end

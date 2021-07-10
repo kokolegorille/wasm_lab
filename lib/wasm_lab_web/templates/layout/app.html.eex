@@ -14,12 +14,14 @@
         <nav role="navigation">
           <ul>
             <li><%= link "Home", to: Routes.page_path(@conn, :index) %></li>
+            <li><%= link "Asteroids", to: Routes.page_path(@conn, :asteroids) %></li>
             <li><%= link "Ffmpeg", to: Routes.page_path(@conn, :ffmpeg) %></li>
             <li><%= link "Game of Life", to: Routes.page_path(@conn, :game_of_life) %></li>
             <li><%= link "Hello Bindgen", to: Routes.page_path(@conn, :hello_bindgen) %></li>
             <li><%= link "Rusty Checkers", to: Routes.page_path(@conn, :rustycheckers) %></li>
             <li><%= link "Rusty Go", to: Routes.page_path(@conn, :rustygo) %></li>
             <li><%= link "Rogue", to: Routes.page_path(@conn, :rogue) %></li>
+            <li><%= link "Stockfish", to: Routes.page_path(@conn, :stockfish) %></li>
             <%= if function_exported?(Routes, :live_dashboard_path, 2) do %>
               <li><%= link "LiveDashboard", to: Routes.live_dashboard_path(@conn, :home) %></li>
             <% end %>

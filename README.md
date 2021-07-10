@@ -306,3 +306,25 @@ cd assets/wasm/rustygo
 wasm-pack build
 
 * Add wasm-bindgen to the crate
+
+## Asteroids
+
+<style>
+    html,
+    body,
+    #glcanvas {
+        margin: 0px;
+        padding: 0px;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        position: absolute;
+        background: black;
+        z-index: 0;
+    }
+</style>
+
+<canvas id="glcanvas" tabindex='1'></canvas>
+
+<script src="https://not-fl3.github.io/miniquad-samples/mq_js_bundle.js"></script>
+<script>load("/wasm/asteroids.wasm");</script> <!-- Your compiled wasm file -->
