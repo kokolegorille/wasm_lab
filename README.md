@@ -308,7 +308,7 @@ wasm-pack build
 * Add wasm-bindgen to the crate
 
 ## Asteroids
-
+```
 <style>
     html,
     body,
@@ -328,3 +328,14 @@ wasm-pack build
 
 <script src="https://not-fl3.github.io/miniquad-samples/mq_js_bundle.js"></script>
 <script>load("/wasm/asteroids.wasm");</script> <!-- Your compiled wasm file -->
+```
+
+On peut télécharger le js, modifier la version de gl (24->26)
+
+## Stockfish WASM
+
+https://github.com/niklasf/stockfish.wasm
+
+Installer emsdk, emscripten.
+Télécharger stockfisk wasm.
+Compiler, à l'aide du script npm.

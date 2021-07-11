@@ -16,4 +16,4 @@
 <canvas id="glcanvas" tabindex='1'></canvas>
 
 <script src="/js/mq_js_bundle.js"></script>
-<script>load("/wasm/asteroids.wasm");</script> <!-- Your compiled wasm file -->
+<script>load("/wasm/asteroids.wasm");</script>

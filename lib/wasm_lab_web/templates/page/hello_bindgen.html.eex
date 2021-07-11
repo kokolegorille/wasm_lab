@@ -5,3 +5,5 @@
     <div id="add-counter">
     </div>
 </div>
+
+<canvas id="canvas" height="150" width="150"></canvas>
