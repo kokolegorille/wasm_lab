@@ -36,4 +36,8 @@ defmodule WasmLabWeb.PageController do
   def stockfish(conn, _params) do
     render(conn, "stockfish.html")
   end
+
+  def screen(conn, _params) do
+    render(conn, "screen.html")
+  end
 end

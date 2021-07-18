@@ -26,6 +26,7 @@ defmodule WasmLabWeb.Router do
     get "/rustygo", PageController, :rustygo
     get "/rogue", PageController, :rogue
     get "/stockfish", PageController, :stockfish
+    get "/screen", PageController, :screen
   end
 
   # Other scopes may use custom stacks.
