@@ -9,8 +9,8 @@ pub enum PieceColor {
 impl fmt::Display for PieceColor {
     fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
         match *self {
-            PieceColor::White => write!(f, "White is white?!"),
-            PieceColor::Black => write!(f, "Ah que coucou Meli7 choupinette black c'est Noir!"),
+            PieceColor::White => write!(f, "W"),
+            PieceColor::Black => write!(f, "B"),
         }
      }
 }
