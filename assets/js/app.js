@@ -43,6 +43,18 @@ if (ffmpeg) {
   )
 }
 
+// FIREWORKS
+// ----------------------
+
+import load_fireworks from "./load_fireworks";
+
+const fireworks = document.getElementById("fireworks");
+
+if (fireworks) {
+  load_fireworks();
+}
+
+
 // HELLO BINDGEN
 // ----------------------
 
@@ -111,7 +123,7 @@ if (rustygo) {
 
 import * as ROT from "rot-js";
 
-console.log(ROT);
+// console.log(ROT);
 
 import {
   Engine,

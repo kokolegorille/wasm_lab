@@ -7,6 +7,8 @@ defmodule WasmLabWeb.Router do
     plug :fetch_flash
     plug :protect_from_forgery
     plug :put_secure_browser_headers
+    #
+    plug WasmLabWeb.Plugs.AddCoopCoep
   end
 
   pipeline :api do
@@ -20,6 +22,7 @@ defmodule WasmLabWeb.Router do
 
     get "/asteroids", PageController, :asteroids
     get "/ffmpeg", PageController, :ffmpeg
+    get "/fireworks", PageController, :fireworks
     get "/game-of-life", PageController, :game_of_life
     get "/hello-bindgen", PageController, :hello_bindgen
     get "/rustycheckers", PageController, :rustycheckers

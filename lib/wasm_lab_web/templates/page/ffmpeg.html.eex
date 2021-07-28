@@ -1,1 +1,17 @@
 <div id="ffmpeg"></div>
+
+<div id="VideoPlayer"></div>
+
+<script
+    phx-track-static
+    type="text/javascript"
+    src="<%= Routes.static_path(@conn, "/js/jwplayer-8.12.4/jwplayer.js") %>"></script>
+<script
+    phx-track-static
+    type="text/javascript"
+    src="<%= Routes.static_path(@conn, "/js/jwplayer-8.12.4/jwplayer.core.controls.js") %>"></script>
+<script
+    phx-track-static
+    type="text/javascript"
+    src="<%= Routes.static_path(@conn, "/js/jwplayer-8.12.4/provider.hlsjs.js") %>"></script>
+<script type="text/javascript">jwplayer.key = "iVH1TKr0uyw9hCEgMY4WeZcYa4uDsPbkq+p2xl5J9Bc=";</script>

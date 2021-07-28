@@ -20,14 +20,29 @@ defmodule WasmLabWeb.Endpoint do
   #
   # You should set gzip to true if you are running phx.digest
   # when deploying your static files in production.
+  # plug Plug.Static,
+  #   at: "/",
+  #   from: :wasm_lab,
+  #   gzip: true,
+  #   only: ~w(css fonts images js favicon.ico robots.txt wasm),
+  #   content_types: %{
+  #     "index" => "application/wasm"
+  #   }
+
   plug Plug.Static,
     at: "/",
     from: :wasm_lab,
     gzip: true,
     only: ~w(css fonts images js favicon.ico robots.txt wasm),
-    content_types: %{
-      "index" => "application/wasm"
-    }
+    content_types: %{"index" => "application/wasm"},
+    # headers: [
+    #   {"Cross-Origin-Embedder-Policy", "require-corp"},
+    #   {"Cross-Origin-Opener-Policy", "same-origin"}
+    # ]
+    headers: [
+      {"cross-origin-embedder-policy", "require-corp"},
+      {"cross-origin-opener-policy", "same-origin"}
+    ]
 
   # Code reloading can be explicitly enabled under the
   # :code_reloader configuration of your endpoint.

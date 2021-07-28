@@ -1,0 +1,21 @@
+{
+	"Element" : [{
+		"id" : "vod_001",
+		"jingle": "",
+		"file_en": "https://vod.4am.ch/vods3/_definst_/smil:amazons3/video.4am.ch/who/20200203-08_eb146/who_20200203_001_en_02.smil/playlist.m3u8?wowzaplaystart=33000",
+		"file_fr": "https://vod.4am.ch/vods3/_definst_/smil:amazons3/video.4am.ch/who/20200203-08_eb146/who_20200203_001_fr_02.smil/playlist.m3u8?wowzaplaystart=33000",
+		"file_zh": "https://vod.4am.ch/vods3/_definst_/smil:amazons3/video.4am.ch/who/20200203-08_eb146/who_20200203_001_zh_01.smil/playlist.m3u8?wowzaplaystart=33000",
+		"file_ar": "https://vod.4am.ch/vods3/_definst_/smil:amazons3/video.4am.ch/who/20200203-08_eb146/who_20200203_001_ar_01.smil/playlist.m3u8?wowzaplaystart=33000",	
+		"file_ru": "https://vod.4am.ch/vods3/_definst_/smil:amazons3/video.4am.ch/who/20200203-08_eb146/who_20200203_001_ru_01.smil/playlist.m3u8?wowzaplaystart=33000",	
+		"file_es": "https://vod.4am.ch/vods3/_definst_/smil:amazons3/video.4am.ch/who/20200203-08_eb146/who_20200203_001_es_02.smil/playlist.m3u8?wowzaplaystart=33000",
+		"image": "https://player.4am.ch/player/base/who/who-logo-slide-2018-001.png",
+		"type": "hls",
+		"tracks": 	[{
+			"file": "https://player.4am.ch/who/20200203-08_eb146/sprite/who_20200203_001_es_01_360.vtt",
+			"kind": "thumbnails"
+		},{
+			"file": "testannotation.vtt",
+			"kind": "chapters"
+		}]
+	}]
+}

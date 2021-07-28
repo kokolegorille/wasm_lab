@@ -1,11 +1,12 @@
 import { Universe } from "game-of-life";
 
-// To load next, You need to add to wasm/game-of-life/pkg/index_bg.js
+// OBSOLETE:
+// Load memory from wasm file!
 //
+// To load next, You need to add to wasm/game-of-life/pkg/index_bg.js
 // export const memory = wasm.memory;
 
-// import { memory } from "game-of-life/index_bg";
-import { memory } from "game-of-life/game_of_life_bg";
+import { memory } from "game-of-life/game_of_life_bg.wasm";
 
 const canvas = document.getElementById("game-of-life-canvas");
 
