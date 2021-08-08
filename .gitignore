@@ -35,3 +35,5 @@ npm-debug.log
 
 pkg/
 target/
+assets/static/js/jwplayer_licence.js
+

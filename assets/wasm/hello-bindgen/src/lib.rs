@@ -1,17 +1,3 @@
-// extern crate wasm_bindgen;
-
-// use wasm_bindgen::prelude::*;
-
-// #[wasm_bindgen]
-// extern "C" {
-//     fn alert(s: &str);
-// }
-
-// #[wasm_bindgen]
-// pub fn greet(name: &str) {
-//     alert(&format!("Hello {}!", name));
-// }
-
 extern crate wasm_bindgen;
 
 use wasm_bindgen::prelude::*;
@@ -20,6 +6,13 @@ use std::time::{Duration, SystemTime, UNIX_EPOCH};
 
 use std::f64;
 use wasm_bindgen::JsCast;
+
+// Julia Set
+pub mod julia;
+// WebAudio
+pub mod oscillator;
+// WebSocket
+pub mod sox;
 
 #[wasm_bindgen(start)]
 pub fn run() {

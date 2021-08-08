@@ -34,6 +34,7 @@ pub struct Game {
 
 #[wasm_bindgen]
 impl Game {
+    #[wasm_bindgen(constructor)]
     pub fn new(size: usize) -> Self {
         Self {
             board: Board::new(size),
@@ -46,7 +47,9 @@ impl Game {
     }
 
     pub fn grid(&self) -> js_sys::Uint32Array {
-        self.board.grid()
+        // self.board.grid()
+        let rust_array = [1, 2, 3];
+        js_sys::Uint32Array::from(&rust_array[..])
     }
 }
 

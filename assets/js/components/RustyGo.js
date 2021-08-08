@@ -10,7 +10,13 @@ const RustyGo = () => {
     const [game, setGame] = useState();
 
     useEffect(() => {
-        setGame(Game.new());
+        // If You use 
+        // #[wasm_bindgen(constructor)]
+        // You need to call new Game()
+        // else, Game.new()
+
+        // setGame(Game.new());
+        setGame(new Game());
     }, []);
 
     if (game) {
@@ -20,7 +26,9 @@ const RustyGo = () => {
 
         // console.log("Grid: ", get_grid(game));
 
-        get_grid(game)
+        const grid = get_grid(game);
+
+        console.log(grid);
     }
 
     return (

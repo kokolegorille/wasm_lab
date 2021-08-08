@@ -1,9 +1,44 @@
 <h1>Hello Bindgen</h1>
 <div id="hello_bindgen"></div>
 
+<!-- Counter -->
 <div id="container">
     <div id="add-counter">
     </div>
 </div>
 
+<!-- Smile -->
 <canvas id="canvas" height="150" width="150"></canvas>
+
+<!-- Julia Set -->
+<div class="controls">
+    <h1>C =</h1>
+    <div>
+        <label for="real">real</label>
+        <input type="number" name="real" id="real" value="-0.15" step="0.001">
+    </div>
+    <div>
+        <label for="imaginary">imaginary</label>
+        <input type="number" name="imaginary" id="imaginary" value="0.65" step="0.001">
+    </div>
+    <button class="button-primary" id="render">render</button>
+</div>
+<canvas id="drawing" width="600" height="600"></canvas>
+
+<!-- WebAudio -->
+<div>
+    <input id="play" type="button" value="⏯"/>
+    (headphone users, please make sure your volume is not too loud!)
+
+    <div>
+        Primary frequency: <input type="range" min="30" max="80" value="50" style="width: 400px" id="primary_input"/>
+    </div>
+
+    <div>
+        Modulation frequency: <input type="range" min="0" max="3" value="0" step="0.05"  style="width: 400px" id="fm_freq"/>
+    </div>
+
+    <div>
+        Modulation amount: <input type="range" min="0" max="3" value="0" step="0.05"  style="width: 400px" id="fm_amount"/>
+    </div>
+</div>

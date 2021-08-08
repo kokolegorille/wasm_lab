@@ -23,9 +23,31 @@ features = [
   "Performance",
   "PerformanceTiming",
   #
+  # Smile
   "CanvasRenderingContext2d",
   "Document",
   "Element",
   "HtmlCanvasElement",
   "Window",
+  #
+  # Julia
+  "ImageData",
+  #
+  # Oscillator
+  "AudioContext",
+  "AudioDestinationNode",
+  "AudioNode",
+  "AudioParam",
+  "GainNode",
+  "OscillatorNode",
+  "OscillatorType",
+  #
+  # Sox
+  "BinaryType",
+  "Blob",
+  "ErrorEvent",
+  "FileReader",
+  "MessageEvent",
+  "ProgressEvent",
+  "WebSocket",
 ]

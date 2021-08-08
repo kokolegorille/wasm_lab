@@ -1,5 +1,14 @@
 // import { greet } from "hello-bindgen";
-import { run, Counter } from "hello-bindgen";
+import { 
+    run, 
+    Counter, 
+    // Julia Set
+    draw, 
+    // WebAudio
+    FmOsc,
+    // WebSocket
+    start_websocket,
+} from "hello-bindgen";
 
 let counters = [];
 
@@ -16,6 +25,12 @@ const load_hello_bindgen = () => {
     let b = document.getElementById('add-counter');
     if (!b) throw new Error('Unable to find #add-counter');
     b.addEventListener('click', ev => addCounter());
+
+    runJulia();
+    runWebAudio();
+
+    // Async/Await
+    runSox();
 
     console.log("BYE! <---");
 }
@@ -42,14 +57,14 @@ const update = () => {
     }
 }
 
-const randomChar = () => {
-    console.log('randomChar');
-    let idx = Math.floor(Math.random() * (chars.length - 1));
-    console.log('index', idx);
-    let ret = chars.splice(idx, 1)[0];
-    console.log('char', ret);
-    return ret;
-}
+// const randomChar = () => {
+//     console.log('randomChar');
+//     let idx = Math.floor(Math.random() * (chars.length - 1));
+//     console.log('index', idx);
+//     let ret = chars.splice(idx, 1)[0];
+//     console.log('char', ret);
+//     return ret;
+// }
 
 const newCounter = (key, value, cb) => {
     let container = document.createElement('div');
@@ -81,6 +96,66 @@ const newField = (key, value) => {
     return ret;
 }
 
+const runJulia = () => {
+    console.log("-> Julia Set");
 
+    const canvas = document.getElementById('drawing');
+    const ctx = canvas.getContext('2d');
+
+    const realInput = document.getElementById('real');
+    const imaginaryInput = document.getElementById('imaginary');
+    const renderBtn = document.getElementById('render');
+
+    renderBtn.addEventListener('click', () => {
+        const real = parseFloat(realInput.value) || 0;
+        const imaginary = parseFloat(imaginaryInput.value) || 0;
+        draw(ctx, 600, 600, real, imaginary);
+    });
+
+    draw(ctx, 600, 600, -0.15, 0.65);
+}
+
+const runWebAudio = () => {
+    let fm = null;
+
+    const play_button = document.getElementById("play");
+    play_button.addEventListener("click", event => {
+      if (fm === null) {
+        fm = new FmOsc();
+        fm.set_note(50);
+        fm.set_fm_frequency(0);
+        fm.set_fm_amount(0);
+        fm.set_gain(0.8);
+      } else {
+        fm.free();
+        fm = null;
+      }
+    });
+
+    const primary_slider = document.getElementById("primary_input");
+    primary_slider.addEventListener("input", event => {
+      if (fm) {
+        fm.set_note(parseInt(event.target.value));
+      }
+    });
+
+    const fm_freq = document.getElementById("fm_freq");
+    fm_freq.addEventListener("input", event => {
+      if (fm) {
+        fm.set_fm_frequency(parseFloat(event.target.value));
+      }
+    });
+
+    const fm_amount = document.getElementById("fm_amount");
+    fm_amount.addEventListener("input", event => {
+      if (fm) {
+        fm.set_fm_amount(parseFloat(event.target.value));
+      }
+    });
+}
+
+const runSox = async () => {
+  await start_websocket();
+}
 
 export default load_hello_bindgen;
